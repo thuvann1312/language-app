@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Learner</title>
+    <style>
+        body { font-family: sans-serif; background: #f4f4f9; display: flex; justify-content: center; padding: 20px; }
+        .card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); max-width: 400px; width: 100%; }
+        .question { font-size: 1.2rem; margin-bottom: 15px; font-weight: bold; }
+        button { display: block; width: 100%; padding: 10px; margin: 5px 0; cursor: pointer; border: 1px solid #ddd; border-radius: 5px; background: white; transition: 0.3s; }
+        button:hover { background: #e0e0ff; }
+        #result { margin-top: 15px; font-weight: bold; text-align: center; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Language Quiz 🇪🇸</h2>
+    <div id="quiz-container">
+        <p class="question" id="question-text">How do you say "Bread" in Spanish?</p>
+        <div id="options">
+            <button onclick="checkAnswer('Leche')">Leche</button>
+            <button onclick="checkAnswer('Pan')">Pan</button>
+            <button onclick="checkAnswer('Agua')">Agua</button>
+        </div>
+        <p id="result"></p>
+    </div>
+</div>
+
+<script>
+    function checkAnswer(answer) {
+        const resultDisplay = document.getElementById('result');
+        if (answer === 'Pan') {
+            resultDisplay.innerText = "✅ Correct! ¡Muy bien!";
+            resultDisplay.style.color = "green";
+        } else {
+            resultDisplay.innerText = "❌ Try again!";
+            resultDisplay.style.color = "red";
+        }
+    }
+</script>
+
+</body>
+</html>
